@@ -11,3 +11,25 @@ Requirements
 
 in Ubuntu/Debian: 
 sudo apt-get install libav-tools
+
+Example
+==
+```python
+''' An example matplotmov script '''
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotmov
+
+mov = matplotmov.Mov() 
+
+
+for i in range(25):
+    fig = plt.figure()
+    sig=np.random.rand(100)
+    plt.plot(sig)
+    mov.add(fig)
+    plt.close()
+
+mov.encode('random_stuff')
+print "done"
+```
