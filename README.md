@@ -18,9 +18,9 @@ Example
 ''' An example matplotmov script '''
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotmov
+import matplotvid
 
-mov = matplotmov.Mov() 
+mov = matplotvid.Vid() 
 
 
 for i in range(25):
