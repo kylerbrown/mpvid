@@ -15,7 +15,7 @@ sudo apt-get install libav-tools
 Example
 ==
 ```python
-''' An example matplotmov script '''
+''' An example matplotvid script '''
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotvid
