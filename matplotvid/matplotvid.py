@@ -8,6 +8,7 @@ from subprocess import call
 import tempfile
 from shutil import rmtree
 import os.path
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 __version__ = '0.1'
 
@@ -36,6 +37,8 @@ class Vid:
         rmtree(self.frame_dir)
 
     def add(self, frame):
+        if frame.canvas is None:
+            FigureCanvas(frame)
         filename = 'frame_{:07d}.png'.format(self.nframes)
         print(filename)
         frame.savefig(os.path.join(self.frame_dir, filename))
