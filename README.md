@@ -15,7 +15,7 @@ Requirements
 in Ubuntu/Debian: 
 sudo apt-get install libav-tools
 
-Example
+Example 1
 ====
 ```python
 ''' An example matplotvid script '''
@@ -23,7 +23,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotvid
 
-mov = matplotvid.Vid() 
+mov = matplotvid.Vided() 
 
 
 for i in range(25):
@@ -36,3 +36,36 @@ for i in range(25):
 mov.encode('random_stuff')
 print "done"
 ```
+
+Example 2
+==========
+
+```python
+import matplotlib.pyplot as plt
+from matplotvid import Video
+from numpy.random import randn
+
+
+def create_figure(data1, data2):
+    """ a nonsense example plot with many features """
+    fig = plt.figure()
+    plt.suptitle(str(sum(data1)))
+    ax1 = plt.subplot(211)
+    plt.errorbar(data1, data2, data1**2, data2**2)
+    plt.ylim((-3, 3))
+    plt.subplot(212, sharex=ax1)
+    plt.hist(data1, alpha=.5)
+    plt.hist(data2, alpha=.5)
+    plt.xlim((-3, 3))
+    return fig
+
+
+vid = Video(encoder='mp4')
+for i in range(50):
+    data1 = randn(20)
+    data2 = randn(20)
+    vid.add(create_figure(data1, data2))
+    plt.close()
+vid.encode('output')
+```
+
