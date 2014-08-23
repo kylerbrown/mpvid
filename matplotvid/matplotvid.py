@@ -23,7 +23,9 @@ _containers = {'compatibility': 'avi',
                'webm': 'webm'}
 
 
-class Vid:
+class Video:
+    """Organizes saving figures to temporary files and compiling
+    the figures into a movie"""
     def __init__(self, framerate=25, quality=1, encoder='compatibility'):
         self.framerate = framerate
         self.quality = quality
@@ -42,6 +44,8 @@ class Vid:
         rmtree(self.frame_dir)
 
     def add(self, frame):
+        """adds a single figure as a frame in the movie
+        by printing the figure to a temporary file"""
         if frame.canvas is None:
             FigureCanvas(frame)
         filename = 'frame_{:07d}.png'.format(self.nframes)
@@ -50,6 +54,8 @@ class Vid:
         self.nframes += 1
 
     def encode(self, filename=None):
+        """feeds the saved image files from Video.add()
+        to avconv to construct a movie"""
         if filename is None:
             filename = os.path.split(self.frame_dir)[-1]
         frames = os.path.join(self.frame_dir, 'frame_%07d.png')
