@@ -26,8 +26,8 @@ class Vid:
                                 'win', 'mac', 'free']
         self.frame_dir = tempfile.mkdtemp(prefix='matplotvid_')
         if encoder not in _containers:
-            raise Exception('enoder must be one of {}'
-                            .format(_containers))
+            raise KeyError('enoder must be one of {}'
+                           .format(_containers))
         self.encoder = encoder
         self.container = _containers[encoder]
         self.nframes = 0
