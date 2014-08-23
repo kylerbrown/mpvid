@@ -23,7 +23,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotvid
 
-mov = matplotvid.Vided() 
+mov = mpvid.Vided() 
 
 
 for i in range(25):
@@ -42,7 +42,7 @@ Example 2
 
 ```python
 import matplotlib.pyplot as plt
-from matplotvid import Video
+from mpvid import Video
 from numpy.random import randn
 
 
