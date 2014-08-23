@@ -48,6 +48,7 @@ class Video:
         by printing the figure to a temporary file"""
         if frame.canvas is None:
             FigureCanvas(frame)
+            frame.canvas.draw()
         filename = 'frame_{:07d}.png'.format(self.nframes)
         print(filename)
         frame.savefig(os.path.join(self.frame_dir, filename))
