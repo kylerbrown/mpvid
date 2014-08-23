@@ -2,7 +2,7 @@
 
 import os
 import pytest
-from matplotvid import Video
+from mpvid import Video
 import matplotlib.pyplot as plt
 
 
