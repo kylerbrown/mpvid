@@ -1,2 +1,2 @@
-from matplotvid import Vid
-from matplotvid import __version__
+from matplotvid.matplotvid import Vid
+from matplotvid.matplotvid import __version__

@@ -14,8 +14,13 @@ __version__ = '0.1'
 
 _containers = {'compatibility': 'avi',
                'win': 'wmv',
-               'mac': 'mac',
-               'free': 'x264'}
+               'mac': 'mov',
+               'browser': 'mp4',
+               'broswer-free': 'webm',
+               'avi': 'avi',
+               'wmv': 'wmv',
+               'mp4': 'mp4',
+               'webm': 'webm'}
 
 
 class Vid:
