@@ -36,6 +36,7 @@ setup(
     license='BSD',
     author='Kyler Brown',
     tests_require=['pytest'],
+    cmdclass={'test': PyTest},
     install_requires=['matplotlib'],
     author_email='kylerjbrown {at} gmail.com',
     description='A quick and dirty matplotlib video library. Uses avconv',
