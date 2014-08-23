@@ -2,7 +2,7 @@
 
 import os
 import pytest
-from matplotvid import Vid
+from matplotvid import Video
 import matplotlib.pyplot as plt
 
 
@@ -10,10 +10,10 @@ class TestMatplotvidVid:
     """Base class for all matplotvid test classes."""
     def test_Vid_format_input(self):
         with pytest.raises(KeyError):
-            Vid(encoder='foo')
+            Video(encoder='foo')
 
     def test_Vid_add(self):
-        mov = Vid()
+        mov = Video()
         N = 10
         for i in range(N):
             mov.add(plt.Figure())
@@ -21,7 +21,7 @@ class TestMatplotvidVid:
         assert len(os.listdir(mov.frame_dir)) == N
 
     def test_Vid_del(self):
-        mov = Vid()
+        mov = Video()
         mov.add(plt.Figure())
         frame_dir = mov.frame_dir
         del mov

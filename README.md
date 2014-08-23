@@ -5,8 +5,10 @@ Create a video from a series of matplotlib figures, using [avconv](https://libav
 
 Useful for quick and dirty movies of complex plots not easily animated with `matplotlib.animation`, such as plots with error-bars, subplots etc.
 
+Compatible with python 2 and 3.
+
 Requirements
-==
+====
 
 *avconv*
 
@@ -14,7 +16,7 @@ in Ubuntu/Debian:
 sudo apt-get install libav-tools
 
 Example
-==
+====
 ```python
 ''' An example matplotvid script '''
 import numpy as np
