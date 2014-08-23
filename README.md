@@ -1,4 +1,4 @@
-matplotvid
+mpvid
 ==========
 
 Create a video from a series of matplotlib figures, using [avconv](https://libav.org/avconv.html).
