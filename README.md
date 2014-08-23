@@ -1,8 +1,9 @@
 matplotvid
 ==========
 
-Create a video from a series of matplotlib figures.
-Currently supports only POSIX compliant systems (Mac, Linux). Windows support is planned.
+Create a video from a series of matplotlib figures, using [avconv](https://libav.org/avconv.html).
+
+Useful for quick and dirty movies of complex plots not easily animated with `matplotlib.animation`, such as plots with error-bars, subplots etc.
 
 Requirements
 ==

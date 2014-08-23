@@ -9,6 +9,7 @@ import tempfile
 from shutil import rmtree
 import os.path
 
+__version__ = '0.1'
 
 _containers = {'compatibility': 'avi',
                'win': 'wmv',
@@ -53,5 +54,6 @@ class Vid:
                             extention=self.container)]
         call_str = " ".join(call_lst)
         print(call_str)
-        # quotes in avconv command cause without shell=True
+        # The quotes in the avconv command cause issues without
+        # shell=True and a single command string.
         call(call_str, shell=True)
