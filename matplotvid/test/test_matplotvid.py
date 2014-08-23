@@ -3,7 +3,7 @@
 import os
 import pytest
 from matplotvid import Vid
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
 
 class TestMatplotvidVid:
@@ -19,3 +19,10 @@ class TestMatplotvidVid:
             mov.add(plt.Figure())
         assert mov.nframes == N
         assert len(os.listdir(mov.frame_dir)) == N
+
+    def test_Vid_del(self):
+        mov = Vid()
+        mov.add(plt.Figure())
+        frame_dir = mov.frame_dir
+        del mov
+        assert not os.path.isdir(frame_dir)
