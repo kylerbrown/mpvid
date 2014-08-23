@@ -1,4 +1,4 @@
-''' matplotmov.py
+''' mpvid.py
 a simple object-oriented video creation
 tool for a sequence of matplotlib figures,
 spefically for use in presentations '''
