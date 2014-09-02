@@ -12,7 +12,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 
 __version__ = '0.1'
 
-_containers = {'compatibility': 'avi',
+containers = {'compatibility': 'avi',
                'win': 'wmv',
                'mac': 'mov',
                'browser': 'mp4',
@@ -32,11 +32,11 @@ class Video:
         self.encoder_options = ['compatibility',
                                 'win', 'mac', 'free']
         self.frame_dir = tempfile.mkdtemp(prefix='matplotvid_')
-        if encoder not in _containers:
+        if encoder not in containers:
             raise KeyError('enoder must be one of {}'
-                           .format(_containers))
+                           .format(containers))
         self.encoder = encoder
-        self.container = _containers[encoder]
+        self.container = containers[encoder]
         self.nframes = 0
 
     def __del__(self):
